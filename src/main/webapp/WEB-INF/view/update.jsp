@@ -51,12 +51,26 @@
 
                 <form action="update" method="post">
 
+
+
+
+
+
                     <div class="p-3 p-lg-5 border">
+
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <td class="column2"><img  class="" style="margin:0 auto; width: 150px;"   src="${pageContext.request.contextPath}/product/display/${book.id}" /></td>
+                            </div>
+                        </div>
+
                         <div class="form-group row">
                             <div class="col-md-6">
                                 <label class="col-form-label">Id</label>
                                 <input type="text" class="form-control" placeholder="Name" id="id" name="id" required="required" value="${book.id }">
                             </div>
+
+
 
                         </div>
                         <div class="form-group row">
