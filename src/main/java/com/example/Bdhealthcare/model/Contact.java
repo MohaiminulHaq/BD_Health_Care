@@ -1,10 +1,13 @@
 package com.example.Bdhealthcare.model;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 
+
+@Data
 @Setter
 @Getter
 @Entity
@@ -24,4 +27,11 @@ public class Contact {
     private String phone;
     @Column(name = "message", nullable = false)
     private String message;
+
+
+    @Override
+    public String toString() {
+        return "Contact [id=" + id + ", name=" + name + ", email=" + email + ", phone=" + phone + ", message="+message
+                + "]";
+    }
 }

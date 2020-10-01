@@ -15,8 +15,9 @@
   Time: 7:54 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="/WEB-INF/view/template/header1.jsp" %>
+
+
+<%@include file="/WEB-INF/view/template/header.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,11 +61,7 @@
 
         <div class="wrap-table100">
 
-            <form  method="get" action="students">
-                <h5>View Information:</h5>
-                <input id ="txtSearch" type="text" name="keyword"/>
-                <button type="submit" >Go</button>
-            </form>
+
             <div class="table100">
 
                 <table>
@@ -75,7 +72,7 @@
                         <th class="column3 text-left">Product Name</th>
                         <th class="column4 text-left">Brand Name</th>
                         <th class="column5 text-left">Description</th>
-                        <th class="column6 text-left">Quantityavailable</th>
+                        <th class="column6 text-left">Disease</th>
                         <th class="column7 text-left">Price</th>
 
 
@@ -104,7 +101,7 @@
                             <td class="column5 text-left  example" data-mrc >${student.description}</td>
 
 
-                            <td class="column6 text-center">${student.quantityavailable}</td>
+                            <td class="column6 text-center">${student.disease}</td>
 
                             <td class="column7 text-left">${student.price}</td>
 
@@ -114,7 +111,7 @@
 
 
 
-                            <td class="column8 text-left"><a href="/edit-product?id=${student.id }"> View<span>
+                            <td class="column8 text-left"><a href="/productview?id=${student.id }"> View<span>
                                      <i class="fa fa-eye"></i></span></a></td>
 
 

@@ -41,8 +41,8 @@ public class Product {
 
 
 
-        @Column(name = "quantityavailable", nullable = false)
-        private String quantityavailable;
+        @Column(name = "disease", nullable = false)
+        private String disease;
 
 
         @Size(min = 2, max = 30, message = "Product name must be between 2 and 30 characters.")
@@ -51,11 +51,11 @@ public class Product {
 
 
         //@Size(min = 10, max = 1000, message = "Product description must be between 10 and 1000 characters.")
-        @Column(name = "description")
+        @Column(name = "description" ,length=8100)
         private String description;
 
         //@Size(min = 2, max = 10)
-        @Column(name = "price",nullable = false, precision = 10, scale = 2)
+        @Column(name = "price",nullable = false)
         private double price;
 
         @Temporal(TemporalType.TIMESTAMP)
@@ -76,7 +76,7 @@ public class Product {
         @Override
         public String toString() {
                 return "Product [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + ", image="
-                        + Arrays.toString(image) + ", createDate=" + createDate + " , brandname=" + brandname + "  , productname=" + productname + " , quantityavailable=" + quantityavailable + "]";
+                        + Arrays.toString(image) + ", createDate=" + createDate + " , brandname=" + brandname + "  , productname=" + productname + " , quantityavailable=" + disease + "]";
         }
 
 }

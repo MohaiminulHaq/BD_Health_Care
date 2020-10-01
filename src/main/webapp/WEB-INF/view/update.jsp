@@ -109,8 +109,8 @@
 
                         <div class="form-group row">
                         <div class="col-md-12">
-                            <label class="col-form-label">quantityavailable</label>
-                            <input type="text" class="form-control" placeholder="Product quantityavailable" id="quantityavailable" name="quantityavailable" required="required"  value="${book.quantityavailable }">
+                            <label class="col-form-label">Disease</label>
+                            <input type="text" class="form-control" placeholder="Enter disease" id="disease" name="disease" required="required"  value="${book.disease }">
                         </div>
                     </div>
 
@@ -128,7 +128,7 @@
 
                         <div class="form-group row">
                             <div class="col-lg-12">
-                                <input type="submit" class="btn btn-primary btn-lg btn-block" value="Send Message">
+                                <input type="submit" class="btn btn-primary btn-lg btn-block" value="Update Information">
                             </div>
                         </div>
                     </div>

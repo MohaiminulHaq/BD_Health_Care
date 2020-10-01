@@ -1,71 +1,149 @@
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: tanvir
+  Date: 7/6/2020
+  Time: 4:01 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%@include file="/WEB-INF/view/template/header1.jsp" %>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <title>Pharma &mdash; Colorlib Template</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Cache-Control" content="no-cache">
-    <meta http-equiv="Expires" content="sat, 01 Dec 2001 00:00:00 GMT">
-    <title>Department of SWE</title>
-    <link href="static/css/bootstrap.min.css" rel="stylesheet">
-    <link href="static/css/style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet">
+
+    <link href="<c:url value="/resources/contact/fonts/icomoon/style.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/contact/css/bootstrap.min.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/contact/css/magnific-popup.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/contact/css/jquery-ui.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/contact/css/owl.carousel.min.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/contact/css/owl.theme.default.min.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/contact/css/aos.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/contact/css/style.css" />" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+
+
 
 </head>
-<body class="bg-success">
-<div class="container text-center">
-    <h3>Update User</h3>
-    <hr>
-    <form class="form-horizontal" method="POST" action="user_update">
-        <input type="hidden" name="id" value="${user.id }" />
-        <div class="form-group">
-            <label class="control-label col-md-3">Patient_Name</label>
-            <div class="col-md-7">
-                <input type="text" class="form-control" name="username"
-                       value="${user.username }" required/>
+
+<body>
+
+
+
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12  center-block" >
+                <h2 class="h3 mb-5 text-black">Update your password:</h2>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-3">Patent_Address</label>
-            <div class="col-md-7">
-                <input type="text" class="form-control" name="address"
-                       value="${user.address }" required />
+            <div class="col-md-12">
+
+                <form action="update2" method="post">
+
+
+
+
+
+                    <div class="p-3 p-lg-5 border">
+
+
+
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <label class="col-form-label">Id:</label>
+                                <input type="text" class="form-control" placeholder="Id" id="id" name="id" required="required" value="${book.id }">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <label class="col-form-label">UserName:</label>
+                                <input type="text" class="form-control" placeholder="UserName" id="name1" name="name1" required="required" value="${book.name1 }">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <label class="col-form-label">Email:</label>
+                                <input type="text" class="form-control" placeholder="Email" id="email" name="email" required="required" value="${book.email }">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <label class="col-form-label">Password:</label>
+                                <input type="text" class="form-control" placeholder="Enter new password" id="password" name="password" required="required" ">
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="form-group row">
+                            <div class="col-lg-12">
+                                <input type="submit" class="btn btn-primary btn-lg btn-block" value="Update">
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
+
         </div>
-        <div class="form-group">
-            <label class="control-label col-md-3">Patent_Age</label>
-            <div class="col-md-7">
-                <input type="text" class="form-control" name="age"
-                       value="${user.age }" required />
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-3">PhoneNumber </label>
-            <div class="col-md-3">
-                <input type="text" class="form-control" name="mobleNumber"
-                       value="${user.mobleNumber }" required />
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-3">Password</label>
-            <div class="col-md-7">
-                <input type="password" class="form-control" name="password"
-                       value="${user.password }" required/>
-            </div>
-        </div>
-        <div class="form-group ">
-            <input type="submit" class="btn btn-primary" value="Update" />
-        </div>
-    </form>
+    </div>
 </div>
 
-<script src="static/js/jquery-1.11.1.min.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="JS/bootstrap.min.js"></script>
+
+
+
+
+<script src="<c:url value="/resources/contact/js/jquery-3.3.1.min.js" />"> </script>
+
+
+<script src="<c:url value="/resources/contact/js/jquery-ui.js" />"> </script>
+
+
+<script src="<c:url value="/resources/contact/js/popper.min.js" />"> </script>
+
+
+<script src="<c:url value="/resources/contact/js/bootstrap.min.js" />"> </script>
+
+
+<script src="<c:url value="/resources/contact/js/owl.carousel.min.js" />"> </script>
+
+
+<script src="<c:url value="/resources/contact/js/jquery.magnific-popup.min.js" />"> </script>
+
+
+<script src="<c:url value="/resources/contact/js/aos.js" />"> </script>
+
+<script src="<c:url value="/resources/contact/js/main.js" />"> </script>
+
+
 </body>
+
 </html>
+
+
+
+<%@include file="/WEB-INF/view/template/footer1.jsp" %>

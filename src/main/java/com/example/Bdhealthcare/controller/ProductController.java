@@ -67,7 +67,7 @@ public class ProductController {
     @PostMapping("/store_product1/saveProduct1" )
     public @ResponseBody ResponseEntity<?> createEmployee1(@RequestParam("name") String name,
                                                           @RequestParam("price") double price, @RequestParam("description") String description,
-                                                          @RequestParam ("productname") String productname, @RequestParam ("brandname") String brandname, @RequestParam ("quantityavailable") String quantityavailable,
+                                                          @RequestParam ("productname") String productname, @RequestParam ("brandname") String brandname, @RequestParam ("disease") String disease,
                                                           Model model, HttpServletRequest request,final @RequestParam("image") MultipartFile file) {
         try {
        String uploadDirectory = System.getProperty("user.dir") + uploadFolder;
@@ -86,7 +86,7 @@ public class ProductController {
             String[] descriptions = description.split(","+",");
             String[] Brandname = brandname.split(","+",");
             String[] Productname = productname.split(","+",");
-            String[] Quantityavailable = quantityavailable.split(","+",");
+            String[] Disease = disease.split(","+",");
 
 
 
@@ -97,7 +97,7 @@ public class ProductController {
 
             log.info("Brandname: " + Brandname[0]);
             log.info("Productname: " + Productname[0]);
-            log.info("Quantityavailable: " + Quantityavailable[0]);
+            log.info("Disease: " + Disease[0]);
             abc(file, uploadDirectory, filePath);
             byte[] imageData = file.getBytes();
             Product product =new Product();
@@ -108,7 +108,7 @@ public class ProductController {
 
             product.setProductname(Productname[0]);
             product.setBrandname(Brandname[0]);
-            product.setQuantityavailable(Quantityavailable[0]);
+            product.setDisease(Disease[0]);
 
 
 
@@ -129,7 +129,12 @@ public class ProductController {
 
 
 
+    @RequestMapping ("/view2")
+    public String viewmessage3(@ModelAttribute Product product, HttpServletRequest request) {
 
+        request.setAttribute("students", productservice.showmyStudents1());
+        return "ViewProduct";
+    }
 
 
     @RequestMapping("/edit-product")
@@ -240,13 +245,6 @@ public  String update1(@ModelAttribute Product product, HttpServletRequest reque
 
 
 
-    @RequestMapping("/search2")
-    public String storep1(@ModelAttribute Product product, HttpServletRequest request, String keyword) {
-
-
-        request.setAttribute("students", productservice.findByKeyword(keyword));
-        return "search";
-    }
 
 
     @GetMapping ("/store_product1")
@@ -260,12 +258,7 @@ public  String update1(@ModelAttribute Product product, HttpServletRequest reque
 
 
 
-    @RequestMapping("/view2")
-    public String loginUser2(@ModelAttribute Product product, HttpServletRequest request) {
 
-        request.setAttribute("students", productservice.showmyStudents());
-        return "ViewProduct";
-    }
 
 
 
@@ -292,6 +285,10 @@ public  String update1(@ModelAttribute Product product, HttpServletRequest reque
 
 
 
+
+
+  //search//
+
     @GetMapping("students")
     public String getAbc(Model model,String keyword) {
 
@@ -307,6 +304,25 @@ public  String update1(@ModelAttribute Product product, HttpServletRequest reque
 
 
     }
+
+
+    @GetMapping("students1")
+    public String abc2(Model model,String keyword) {
+
+        if (keyword != null) {
+            model.addAttribute("students", productservice.findByKeyword(keyword));
+        } else {
+            model.addAttribute("students", productservice.getProductRepository());
+
+
+        }
+
+        return "UserProduct";
+
+
+    }
+
+    //search end//
 
 
 

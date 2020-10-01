@@ -17,6 +17,7 @@ public class AdminControler {
         this.productservice = productservice;
     }
 
+
     @GetMapping("/adminproduct")
     public String contract (@ModelAttribute Product product, HttpServletRequest request) {
 
@@ -36,6 +37,13 @@ public class AdminControler {
     public String Contact () {
 
         return "contact";
+    }
+
+
+    @GetMapping("/corona")
+    public String Corona () {
+
+        return "Corona";
     }
 
 }

@@ -21,7 +21,7 @@
     <link href="<c:url value="/resources/contact/css/bootstrap.min.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/contact/css/magnific-popup.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/contact/css/jquery-ui.css" />" rel="stylesheet">
-    <link href="<c:url value="/resources/contact/css/owl.carousel.min.css" />" rel="stylesheet"
+    <link href="<c:url value="/resources/contact/css/owl.carousel.min.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/contact/css/owl.theme.default.min.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/contact/css/aos.css" />" rel="stylesheet">
     <link href="<c:url value="/resources/contact/css/style.css" />" rel="stylesheet">
@@ -42,9 +42,13 @@
         <div class="search-wrap">
             <div class="container">
                 <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
-                <form action="#" method="post">
-                    <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
+
+                <form action="students" method="get">
+                    <input type="text" class="form-control" name="keyword" placeholder="Search keyword and hit enter...">
                 </form>
+
+
+
             </div>
         </div>
 
@@ -63,7 +67,7 @@
                             <li class="has-children">
                                 <a href="#">Dropdown</a>
                                 <ul class="dropdown">
-                                    <li><a href="#">Supplements</a></li>
+                                    <li><a href="/corona">Bd Corona Update</a></li>
                                     <li class="has-children">
                                         <a href="#">Vitamins</a>
                                         <ul class="dropdown">
@@ -79,7 +83,7 @@
                                 </ul>
                             </li>
                             <li><a href="/about">About</a></li>
-                            <li class=""><a href="/contact">Contact</a></li>
+
                         </ul>
                     </nav>
                 </div>

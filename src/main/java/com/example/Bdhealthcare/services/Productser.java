@@ -1,9 +1,9 @@
 package com.example.Bdhealthcare.services;
 
 
-import com.example.Bdhealthcare.model.Product;
+        import com.example.Bdhealthcare.model.Product;
 
-import java.util.Optional;
+        import java.util.Optional;
 
 public interface Productser {
 
@@ -12,7 +12,7 @@ public interface Productser {
 
 
 }
-   
+
 
 
 

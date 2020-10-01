@@ -12,7 +12,7 @@ $(document).ready(function() {
 
         var brandname = $("#brandname").val();
         var productname = $("#productname").val();
-        var quantityavailable = $("#quantityavailable").val();
+        var disease = $("#disease").val();
         var file = $('#file')[0].files[0];
 
 
@@ -22,7 +22,7 @@ $(document).ready(function() {
         data.append('description', description);
         data.append('brandname', brandname);
         data.append('productname', productname);
-        data.append('quantityavailable', quantityavailable);
+        data.append('disease', disease);
         data.append('image', file);
 
         $.ajax({

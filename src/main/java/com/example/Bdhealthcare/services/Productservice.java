@@ -39,11 +39,11 @@ public class Productservice {
 
 
 
-    public Product findByBrandnameAndDescriptionAndPriceAndProductnameAndQuantityavailableAndCreateDateAndImageAndName(Long id, String brandname, String description, double price, String productname, String quantityavailable, Date createDate, byte[] image,String name) {
+    public Product findByBrandnameAndDescriptionAndPriceAndProductnameAndDiseaseAndCreateDateAndImageAndName(Long id, String brandname, String description, double price, String productname, String disease, Date createDate, byte[] image,String name) {
 
 
 
-        return productRepository.findByBrandnameAndDescriptionAndPriceAndProductnameAndQuantityavailableAndCreateDateAndImageAndName(brandname, description, price, productname, quantityavailable, createDate,image,name);
+        return productRepository.findByBrandnameAndDescriptionAndPriceAndProductnameAndDiseaseAndCreateDateAndImageAndName(brandname, description, price, productname, disease, createDate,image,name);
 
     }
 
@@ -115,7 +115,7 @@ public List<Product> listAll(){
         abc.setProductname(product.getProductname());
         abc.setBrandname(product.getBrandname());
         abc.setDescription(product.getDescription());
-        abc.setQuantityavailable(product.getQuantityavailable());
+        abc.setDisease(product.getDisease());
         abc.setPrice(product.getPrice());
         return productRepository.save(abc);
     }

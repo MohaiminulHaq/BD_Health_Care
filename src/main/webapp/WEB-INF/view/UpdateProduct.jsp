@@ -56,7 +56,7 @@
             <label class="control-label col-md-3">Password</label>
             <div class="col-md-7">
                 <input type="text" class="form-control" name="password"
-                       value="${products.quantityavailable }" required/>
+                       value="${products.d }" required/>
             </div>
         </div>
         <div class="form-group ">
